@@ -4,7 +4,6 @@
   --red-400: hsl(0, 100%, 68%);
   --blue-950: hsl(230, 29%, 20%);
   --blue-100: hsl(207, 33%, 95%);
-
   --font-body: 'Barlow', sans-serif;
   --font-heading: 'Barlow Condensed', sans-serif;
 }
@@ -22,15 +21,15 @@ body {
 }
 
 body::after {
-  top: -100px;
+  top: -120px;
   left: 50%;
   z-index: -1;
   position: absolute;
   content: '';
-  width: 100dvw;
+  width: 50dvw;
   min-height: 72%;
   background-color: var(--blue-100);
-  border-radius: 80px;
+  border-radius: 0 0 0 80px;
 }
 
 img {
@@ -46,7 +45,9 @@ a {
   color: inherit;
 }
 
-/*  */
+.header-wrapper {
+  margin: 0 auto;
+}
 
 .header {
   display: flex;
@@ -118,16 +119,14 @@ a {
   opacity: 0.5;
 }
 
-/*  */
-
 .img-wrapper {
-  margin: 4rem 0 6rem 0;
-  /* background-color: red; */
+  height: 100%;
+  margin: 4rem -2rem 6rem -2rem;
+  overflow: hidden;
 }
 
 .img-wrapper img {
-  margin-left: -6.9%;
-  max-width: 130vw;
+  min-width: 140%;
 }
 
 .eyebrow-wrapper {
@@ -210,9 +209,18 @@ a {
 
 @media (min-width: 45rem) {
   body {
+    max-width: 1440px;
     padding: 4rem;
     margin: 0 auto;
-    max-width: 1440px;
+  }
+
+  .img-wrapper {
+    margin: 4rem -4rem 6rem 0;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
   }
 
   .menu {
@@ -262,30 +270,36 @@ a {
 @media (min-width: 56.25rem) {
   .main {
     display: grid;
-    margin-top: 14rem;
+    margin-top: 8rem;
+    align-items: center;
     grid-template-columns: 1fr 1fr;
   }
 
+  .content-heading h1 {
+    margin-right: 2rem;
+  }
+
   .img-wrapper {
-    margin: 0;
     grid-column: 2;
+    margin-right: -4rem;
+    /* overflow: visible; */
   }
 
   .img-wrapper img {
-    top: 13rem;
-    object-fit: contain;
-    height: 64%;
-    position: absolute;
-    margin-left: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+  }
+
+  .content-wrapper {
+    grid-row: 1;
+    grid-column: 1;
   }
 }
 
-@media (min-width: 90rem) {
-  .content-wrapper {
-    margin-top: auto;
-  }
-
-  .img-wrapper img {
-    height: 85%;
+@media (min-width: 1440px) {
+  .img-wrapper {
+    /* margin: 0; */
+    overflow: visible;
   }
 }
