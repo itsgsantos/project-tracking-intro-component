@@ -303,3 +303,9 @@ a {
     overflow: visible;
   }
 }
+
+@media (min-width: 2000px) {
+  .img-wrapper img {
+    overflow: visible;
+  }
+}
